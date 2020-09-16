@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MovieRuntimeData : MonoBehaviour {
     
-    private Dictionary<string, MovieData> titleKeyedData;
+    private readonly Dictionary<string, MovieData> titleKeyedData = new Dictionary<string, MovieData>();
 
     public int NumTitleKeyedItems {
         get { return titleKeyedData.Count; }

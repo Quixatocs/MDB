@@ -11,17 +11,19 @@ public class Loader : MonoBehaviour {
     
     void Start()
     {
-        
         string[] movieDataRecords = MovieDataCSVTransformer.SplitRecordsFromMovieData(movieDataCSV.text);
         
-        Debug.Log(movieDataRecords.Length);
+        Debug.Log($"Number of Records to Load: <{movieDataRecords.Length}>");
 
         // start at i = 1 because the first record is headers
         for (int i = 1; i < movieDataRecords.Length; i++) {
-            Debug.Log(MovieDataCSVTransformer.LoadMovieDataFromRecord(movieDataRecords[i]).Title);
+            MovieData movieData = MovieDataCSVTransformer.LoadMovieDataFromRecord(movieDataRecords[i]);
+            Debug.Log(movieData.Title);
+            movieRuntimeData.AddTitleKeyedData(movieData.Title, movieData);
         }
         
-        //Call CSV loader
+        Debug.Log($"Number of Records Loaded: <{movieRuntimeData.NumTitleKeyedItems}>");
+        
     }
 
 }
