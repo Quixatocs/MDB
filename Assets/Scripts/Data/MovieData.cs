@@ -8,8 +8,12 @@
     // Technical Data
     public string Color;
     public int AspectRatio; // will * 100 to store in int instead of float
-    public int Budget;
+    public long Budget;
     public int Gross;
+    public string Language;
+    public string Country;
+    public string ContentRating;
+
 
     //Community Data
     public int FacebookLikes;
