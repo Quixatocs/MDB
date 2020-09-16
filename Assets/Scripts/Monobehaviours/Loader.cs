@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Loader : MonoBehaviour {
 
@@ -10,6 +11,13 @@ public class Loader : MonoBehaviour {
     
     void Start()
     {
+        string[] movieDataRecords = movieDataCSV.text.Split(
+            new[] {"\r\n", "\r", "\n"},
+            StringSplitOptions.None
+        );
+        
+        Debug.Log(movieDataRecords.Length);
+        
         //Call CSV loader
     }
 
