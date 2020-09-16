@@ -20,9 +20,10 @@
     public int ImdbScore; // will * 10 to store in int instead of float
     public int CriticsForReviewNum;
     public int UserForReviewNum;
-    
+    public string ImdbUrl;
+
     //Actor Data
-    
+
     //public 
 
 }

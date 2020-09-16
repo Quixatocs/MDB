@@ -64,6 +64,7 @@ public static class MovieDataCSVTransformer
                 case 16: // plot_keywords
                     break;
                 case 17: // movie_imdb_link
+                    newMovieData.ImdbUrl = columns[17];
                     break;
                 case 18: // num_user_for_reviews
                     newMovieData.UserForReviewNum = !string.IsNullOrEmpty(columns[18]) ? int.Parse(columns[18]) : 0;
