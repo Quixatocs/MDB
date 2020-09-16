@@ -11,10 +11,8 @@ public class Loader : MonoBehaviour {
     
     void Start()
     {
-        string[] movieDataRecords = movieDataCSV.text.Split(
-            new[] {"\r\n", "\r", "\n"},
-            StringSplitOptions.None
-        );
+        
+        string[] movieDataRecords = CSVTransformer.SplitRecordsFromMovieData(movieDataCSV.text);
         
         Debug.Log(movieDataRecords.Length);
         
