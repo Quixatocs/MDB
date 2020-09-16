@@ -12,9 +12,14 @@ public class Loader : MonoBehaviour {
     void Start()
     {
         
-        string[] movieDataRecords = CSVTransformer.SplitRecordsFromMovieData(movieDataCSV.text);
+        string[] movieDataRecords = MovieDataCSVTransformer.SplitRecordsFromMovieData(movieDataCSV.text);
         
         Debug.Log(movieDataRecords.Length);
+
+        // start at i = 1 because the first record is headers
+        for (int i = 1; i < movieDataRecords.Length; i++) {
+            Debug.Log(MovieDataCSVTransformer.LoadMovieDataFromRecord(movieDataRecords[i]).Title);
+        }
         
         //Call CSV loader
     }

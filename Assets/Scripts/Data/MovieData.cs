@@ -1,22 +1,24 @@
-﻿public readonly struct MovieData {
+﻿public class MovieData {
     // Title Data
-    public readonly string Title;
-    public readonly CreditData Director;
-    public readonly int Duration;
-    public readonly int TitleYear;
+    public string Title;
+    public CreditData Director;
+    public int Duration;
+    public int TitleYear;
     
     // Technical Data
-    public readonly string Color;
-    public readonly int AspectRatio; // will * 100 to store in int instead of float
-    public readonly int Budget;
-    public readonly int Gross;
+    public string Color;
+    public int AspectRatio; // will * 100 to store in int instead of float
+    public int Budget;
+    public int Gross;
 
     //Community Data
-    public readonly int FacebookLikes;
-    public readonly int ImdbScore; // will * 10 to store in int instead of float
-    public readonly int CriticsForReviewNum;
-    public readonly int UserForReviewNum;
+    public int FacebookLikes;
+    public int ImdbScore; // will * 10 to store in int instead of float
+    public int CriticsForReviewNum;
+    public int UserForReviewNum;
     
     //Actor Data
+    
+    //public 
 
 }
