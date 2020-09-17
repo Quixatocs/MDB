@@ -1,8 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public static class MovieDataCSVTransformer
-{
+public static class MovieDataCSVTransformer {
     /// <summary>
     /// Splits the records from the raw movie data and separates by new lines and carriage returns
     /// </summary>
