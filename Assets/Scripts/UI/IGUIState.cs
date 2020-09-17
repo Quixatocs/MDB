@@ -15,4 +15,9 @@ public interface IGUIState
     /// Method to be called when entering the state
     /// </summary>
     void OnEnter(GUIController guiController);
+    
+    /// <summary>
+    /// Method to be called when exiting the state
+    /// </summary>
+    void OnExit();
 }

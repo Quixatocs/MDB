@@ -6,7 +6,11 @@ public class SearchMovieDatabaseState : IGUIState {
         guiController.SearchMovieDatabaseDialog.SetActive(true);
         guiController.SearchMovieDatabaseButton.onClick.AddListener(OnSearchClicked);
     }
-    
+
+    public void OnExit() {
+        throw new System.NotImplementedException();
+    }
+
     private void OnSearchClicked() {
         
     }

@@ -7,6 +7,10 @@ public class OpenMovieDatabaseState : IGUIState {
         guiController.OpenMovieDatabaseButton.onClick.AddListener(OnOpenDatabaseClicked);
     }
 
+    public void OnExit() {
+        throw new System.NotImplementedException();
+    }
+
     private void OnOpenDatabaseClicked() {
         NextState = new SearchMovieDatabaseState();
         IsComplete = true;
