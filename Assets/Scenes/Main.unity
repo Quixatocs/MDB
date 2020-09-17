@@ -257,7 +257,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Search Movie Database
+  m_Text: Open Movie Database
 --- !u!222 &399401528
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &424943793
 RectTransform:
   m_ObjectHideFlags: 0
@@ -887,7 +887,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1516760775
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1091,6 +1091,7 @@ MonoBehaviour:
   openMovieDatabaseButton: {fileID: 1174428794}
   searchMovieDatabaseDialog: {fileID: 424943792}
   searchMovieDatabaseInputField: {fileID: 1646063183}
+  searchMovieDatabaseButton: {fileID: 0}
   viewMovieDatabaseDialog: {fileID: 1516760774}
 --- !u!1 &2084928884
 GameObject:

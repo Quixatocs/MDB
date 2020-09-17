@@ -69,8 +69,7 @@ public class GUIController : MonoBehaviour {
     }
 
     private void Start() {
-        //TODO: Start initial state here
-        instance.SetState(null);
+        instance.SetState(new OpenMovieDatabaseState());
     }
 
     /// <summary>
