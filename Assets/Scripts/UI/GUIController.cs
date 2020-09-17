@@ -31,6 +31,14 @@ public class GUIController : MonoBehaviour {
     /// </summary>
     private IEnumerator CheckComplete() {
         while (true) {
+            yield return new WaitForEndOfFrame();
+            
+            if (currentState == null) { 
+                // We are leaving the statemachine so no need to run the check
+                stateCompleteCheck = null;
+                yield break;
+            }
+            
             if (currentState.IsComplete) {
                 SetState(currentState.NextState);
             }
