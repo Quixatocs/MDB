@@ -14,8 +14,11 @@ public class ViewMovieDatabaseState : IGUIState {
         guiController.ViewMovieDatabaseBackButton.onClick.AddListener(OnBackClicked);
 
         if (currentMovieData == null) return;
-        
-        
+
+        guiController.ViewTitleFieldText.text = currentMovieData.Title;
+        guiController.ViewDirectorFieldText.text = currentMovieData.Director.Name;
+        guiController.ViewDurationFieldText.text = string.Format("{0} mins", currentMovieData.Duration.ToString());
+        guiController.ViewYearFieldText.text = currentMovieData.TitleYear.ToString();
     }
 
     public void OnExit(GUIController guiController) {

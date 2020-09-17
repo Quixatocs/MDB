@@ -54,10 +54,10 @@ public class GUIController : MonoBehaviour {
     [Header("View Movie Database UI")]
     [SerializeField] private GameObject viewDialog;
     [SerializeField] private Button viewBackButton;
-    [SerializeField] private Text titleFieldText;
-    [SerializeField] private Text directorFieldText;
-    [SerializeField] private Text durationFieldText;
-    [SerializeField] private Text yearFieldText;
+    [SerializeField] private Text viewTitleFieldText;
+    [SerializeField] private Text viewDirectorFieldText;
+    [SerializeField] private Text viewDurationFieldText;
+    [SerializeField] private Text viewYearFieldText;
     
     public GameObject ViewMovieDatabaseDialog {
         get => viewDialog;
@@ -67,20 +67,20 @@ public class GUIController : MonoBehaviour {
         get => viewBackButton;
     }
     
-    public Text TitleFieldText {
-        get => titleFieldText;
+    public Text ViewTitleFieldText {
+        get => viewTitleFieldText;
     }
     
-    public Text DirectorFieldText {
-        get => directorFieldText;
+    public Text ViewDirectorFieldText {
+        get => viewDirectorFieldText;
     }
     
-    public Text DurationFieldText {
-        get => durationFieldText;
+    public Text ViewDurationFieldText {
+        get => viewDurationFieldText;
     }
     
-    public Text YearFieldText {
-        get => yearFieldText;
+    public Text ViewYearFieldText {
+        get => viewYearFieldText;
     }
 
     #endregion

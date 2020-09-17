@@ -17,7 +17,7 @@ public class SearchMovieDatabaseState : IGUIState {
 
     private void OnSearchClicked() {
         //TODO: Find Correct Movie Data
-        MovieData movieDataToDisplay = null;
+        MovieData movieDataToDisplay = MovieRuntimeData.GetMovieDataFromTitle("The Lord of the Rings: The Return of the King ");
         NextState = new ViewMovieDatabaseState(movieDataToDisplay);
         IsComplete = true;
     }

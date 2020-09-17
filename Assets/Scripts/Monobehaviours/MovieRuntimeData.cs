@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class MovieRuntimeData : MonoBehaviour {
+public static class MovieRuntimeData {
     
-    private readonly Dictionary<string, MovieData> titleKeyedData = new Dictionary<string, MovieData>();
+    private static Dictionary<string, MovieData> titleKeyedData = new Dictionary<string, MovieData>();
 
-    public int NumTitleKeyedItems {
+    public static int NumTitleKeyedItems {
         get { return titleKeyedData.Count; }
     }
 
-    public void ClearTitleKeyedData() {
+    public static void ClearTitleKeyedData() {
         titleKeyedData.Clear();
     }
 
@@ -17,11 +17,11 @@ public class MovieRuntimeData : MonoBehaviour {
     /// Adds a MovieData object keyed against the movie title
     /// Will replace an existing entry if a second is found with the same key
     /// </summary>
-    public void AddTitleKeyedData(string key, MovieData movieData) {
+    public static void AddTitleKeyedData(string key, MovieData movieData) {
         titleKeyedData.SetValue(key, movieData);
     }
 
-    public MovieData GetMovieDataFromTitle(string key) {
+    public static MovieData GetMovieDataFromTitle(string key) {
         return titleKeyedData[key];
     }
     
