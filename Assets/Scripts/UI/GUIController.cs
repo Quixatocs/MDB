@@ -30,6 +30,8 @@ public class GUIController : MonoBehaviour {
     [SerializeField] private InputField searchInputField;
     [SerializeField] private Button searchButton;
     [SerializeField] private Button searchBackButton;
+    [SerializeField] private GameObject searchMatchedTitlePrefab;
+    [SerializeField] private Transform searchMatchedTitlesHolder;
     
     public GameObject SearchMovieDatabaseDialog {
         get => searchDialog;
@@ -45,6 +47,14 @@ public class GUIController : MonoBehaviour {
     
     public Button SearchMovieDatabaseBackButton {
         get => searchBackButton;
+    }
+    
+    public GameObject SearchMatchedTitlePrefab {
+        get => searchMatchedTitlePrefab;
+    }
+    
+    public Transform SearchMatchedTitlesHolder {
+        get => searchMatchedTitlesHolder;
     }
 
     #endregion

@@ -21,8 +21,25 @@ public static class MovieRuntimeData {
         titleKeyedData.SetValue(key, movieData);
     }
 
+    /// <summary>
+    /// Gets an individual movie data from the full title as the key
+    /// </summary>
     public static MovieData GetMovieDataFromTitle(string key) {
         return titleKeyedData[key];
+    }
+
+    /// <summary>
+    /// Gets a list of unique matching Movie titles from the partial input string
+    /// </summary>
+    public static HashSet<string> GetUniqueMatchingTitles(string partialTitle) {
+        HashSet<string> matchingTitles = new HashSet<string>();
+        IEnumerable<MovieData> movieDatas = titleKeyedData.PartialMatch(partialTitle);
+
+        foreach (MovieData movieData in movieDatas) {
+            matchingTitles.Add(movieData.Title);
+        }
+        
+        return matchingTitles;
     }
     
     //TODO: Other dictionaries for different searches

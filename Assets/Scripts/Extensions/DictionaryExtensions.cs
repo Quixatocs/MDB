@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 public static class DictionaryExtensions {
     
@@ -9,6 +10,18 @@ public static class DictionaryExtensions {
         } else {
             dictionary.Add(key, value);
         }
+    }
+    
+    public static IEnumerable<T> PartialMatch<T>(this Dictionary<string, T> dictionary, string partialKey) {
+        IEnumerable<string> matchingKeys = dictionary.Keys.Where(currentKey => currentKey.Contains(partialKey));
+
+        List<T> matchingValues = new List<T>();
+
+        foreach (string currentKey in matchingKeys) {
+            matchingValues.Add(dictionary[currentKey]);
+        }
+
+        return matchingValues;
     }
 }
 
