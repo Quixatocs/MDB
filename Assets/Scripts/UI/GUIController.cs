@@ -10,15 +10,15 @@ public class GUIController : MonoBehaviour {
     #region Open Movie Database UI Elements
 
     [Header("Open Movie Database UI")]
-    [SerializeField] private GameObject openMovieDatabaseDialog;
-    [SerializeField] private Button openMovieDatabaseButton;
+    [SerializeField] private GameObject openDialog;
+    [SerializeField] private Button openButton;
 
     public GameObject OpenMovieDatabaseDialog {
-        get => openMovieDatabaseDialog;
+        get => openDialog;
     }
     
     public Button OpenMovieDatabaseButton {
-        get => openMovieDatabaseButton;
+        get => openButton;
     }
 
     #endregion
@@ -26,20 +26,25 @@ public class GUIController : MonoBehaviour {
     #region Search Movie Database UI Elements
     
     [Header("Search Movie Database UI")]
-    [SerializeField] private GameObject searchMovieDatabaseDialog;
-    [SerializeField] private InputField searchMovieDatabaseInputField;
-    [SerializeField] private Button searchMovieDatabaseButton;
+    [SerializeField] private GameObject searchDialog;
+    [SerializeField] private InputField searchInputField;
+    [SerializeField] private Button searchButton;
+    [SerializeField] private Button searchBackButton;
     
     public GameObject SearchMovieDatabaseDialog {
-        get => searchMovieDatabaseDialog;
+        get => searchDialog;
     }
     
     public InputField SearchMovieDatabaseInputField {
-        get => searchMovieDatabaseInputField;
+        get => searchInputField;
     }
     
     public Button SearchMovieDatabaseButton {
-        get => searchMovieDatabaseButton;
+        get => searchButton;
+    }
+    
+    public Button SearchMovieDatabaseBackButton {
+        get => searchBackButton;
     }
 
     #endregion
@@ -47,10 +52,15 @@ public class GUIController : MonoBehaviour {
     #region View Movie Database UI Elements
     
     [Header("View Movie Database UI")]
-    [SerializeField] private GameObject viewMovieDatabaseDialog;
+    [SerializeField] private GameObject viewDialog;
+    [SerializeField] private Button viewBackButton;
     
     public GameObject ViewMovieDatabaseDialog {
-        get => viewMovieDatabaseDialog;
+        get => viewDialog;
+    }
+    
+    public Button ViewMovieDatabaseBackButton {
+        get => viewBackButton;
     }
 
     #endregion

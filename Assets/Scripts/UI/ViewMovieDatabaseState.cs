@@ -2,11 +2,19 @@
 public class ViewMovieDatabaseState : IGUIState {
     public bool IsComplete { get; private set; }
     public IGUIState NextState { get; private set; }
+    
     public void OnEnter(GUIController guiController) {
-        throw new System.NotImplementedException();
+        guiController.ViewMovieDatabaseDialog.SetActive(true);
+        guiController.ViewMovieDatabaseBackButton.onClick.AddListener(OnBackClicked);
     }
 
     public void OnExit(GUIController guiController) {
-        throw new System.NotImplementedException();
+        guiController.ViewMovieDatabaseDialog.SetActive(false);
+        guiController.ViewMovieDatabaseBackButton.onClick.RemoveAllListeners();
+    }
+    
+    private void OnBackClicked() {
+        NextState = new SearchMovieDatabaseState();
+        IsComplete = true;
     }
 }
