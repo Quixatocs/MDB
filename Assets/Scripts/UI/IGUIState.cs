@@ -14,5 +14,5 @@ public interface IGUIState
     /// <summary>
     /// Method to be called when entering the state
     /// </summary>
-    void OnEnter();
+    void OnEnter(GUIController guiController);
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GUIController : MonoBehaviour {
 
@@ -8,26 +9,39 @@ public class GUIController : MonoBehaviour {
 
     #region Open Movie Database UI Elements
 
+    [Header("Open Movie Database UI")]
     [SerializeField] private GameObject openMovieDatabaseDialog;
+    [SerializeField] private Button openMovieDatabaseButton;
 
     public GameObject OpenMovieDatabaseDialog {
         get => openMovieDatabaseDialog;
+    }
+    
+    public Button OpenMovieDatabaseButton {
+        get => openMovieDatabaseButton;
     }
 
     #endregion
 
     #region Search Movie Database UI Elements
-
+    
+    [Header("Search Movie Database UI")]
     [SerializeField] private GameObject searchMovieDatabaseDialog;
+    [SerializeField] private InputField searchMovieDatabaseInputField;
     
     public GameObject SearchMovieDatabaseDialog {
         get => searchMovieDatabaseDialog;
+    }
+    
+    public InputField SearchMovieDatabaseInputField {
+        get => searchMovieDatabaseInputField;
     }
 
     #endregion
 
     #region View Movie Database UI Elements
     
+    [Header("View Movie Database UI")]
     [SerializeField] private GameObject viewMovieDatabaseDialog;
     
     public GameObject ViewMovieDatabaseDialog {
@@ -60,7 +74,7 @@ public class GUIController : MonoBehaviour {
     private void SetState(IGUIState nextState) {
         currentState = nextState;
         if (currentState != null) {
-            currentState.OnEnter();
+            currentState.OnEnter(this);
             
             if (stateCompleteCheck == null) {
                 stateCompleteCheck = StartCoroutine(CheckComplete());
