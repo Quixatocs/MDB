@@ -13,6 +13,10 @@ public class MovieRuntimeData : MonoBehaviour {
         titleKeyedData.Clear();
     }
 
+    /// <summary>
+    /// Adds a MovieData object keyed against the movie title
+    /// Will replace an existing entry if a second is found with the same key
+    /// </summary>
     public void AddTitleKeyedData(string key, MovieData movieData) {
         titleKeyedData.SetValue(key, movieData);
     }

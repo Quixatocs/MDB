@@ -3,6 +3,9 @@ using UnityEngine;
 
 public static class MovieDataCSVTransformer
 {
+    /// <summary>
+    /// Splits the records from the raw movie data and separates by new lines and carriage returns
+    /// </summary>
     public static string[] SplitRecordsFromMovieData(string text) {
         return text.Split(
             new[] {"\r\n", "\r", "\n"},
@@ -10,6 +13,9 @@ public static class MovieDataCSVTransformer
         );
     }
 
+    /// <summary>
+    /// Splits a single record into its columns then publishes this into a new MovieData object
+    /// </summary>
     public static MovieData LoadMovieDataFromRecord(string record) {
         MovieData newMovieData = new MovieData();
         
@@ -100,8 +106,6 @@ public static class MovieDataCSVTransformer
                     break;
             }
         }
-
-
         return newMovieData;
     }
 
