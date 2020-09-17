@@ -22,8 +22,4 @@
     public int UserForReviewNum;
     public string ImdbUrl;
 
-    //Actor Data
-
-    //public 
-
 }

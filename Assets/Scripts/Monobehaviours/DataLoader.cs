@@ -14,7 +14,6 @@ public class DataLoader : MonoBehaviour {
         // start at i = 1 because the first record is headers
         for (int i = 1; i < movieDataRecords.Length; i++) {
             MovieData movieData = MovieDataCSVTransformer.LoadMovieDataFromRecord(movieDataRecords[i]);
-            Debug.Log(movieData.Title);
             MovieRuntimeData.AddTitleKeyedData(movieData.Title, movieData);
         }
         

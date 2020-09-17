@@ -17,8 +17,16 @@ public class ViewMovieDatabaseState : IGUIState {
 
         guiController.ViewTitleFieldText.text = currentMovieData.Title;
         guiController.ViewDirectorFieldText.text = currentMovieData.Director.Name;
-        guiController.ViewDurationFieldText.text = string.Format("{0} mins", currentMovieData.Duration.ToString());
+        guiController.ViewDurationFieldText.text = $"{currentMovieData.Duration.ToString()} mins";
         guiController.ViewYearFieldText.text = currentMovieData.TitleYear.ToString();
+
+        guiController.ViewColorFieldText.text = currentMovieData.Color;
+        guiController.ViewAspectRatioFieldText.text = (currentMovieData.AspectRatio / 100f).ToString();
+        guiController.ViewBudgetFieldText.text = $"{MoneyRounder.GetMoneyRoundedToNearestPower(currentMovieData.Budget)} USD";
+        guiController.ViewGrossFieldText.text = $"{MoneyRounder.GetMoneyRoundedToNearestPower(currentMovieData.Gross)} USD";
+        guiController.ViewLanguageFieldText.text = currentMovieData.Language;
+        guiController.ViewCountryFieldText.text = currentMovieData.Country;
+        guiController.ViewContentRatingFieldText.text = currentMovieData.ContentRating;
     }
 
     public void OnExit(GUIController guiController) {

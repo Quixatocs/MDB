@@ -54,11 +54,20 @@ public class GUIController : MonoBehaviour {
     [Header("View Movie Database UI")]
     [SerializeField] private GameObject viewDialog;
     [SerializeField] private Button viewBackButton;
+    
     [SerializeField] private Text viewTitleFieldText;
     [SerializeField] private Text viewDirectorFieldText;
     [SerializeField] private Text viewDurationFieldText;
     [SerializeField] private Text viewYearFieldText;
     
+    [SerializeField] private Text viewColorFieldText;
+    [SerializeField] private Text viewAspectRatioFieldText;
+    [SerializeField] private Text viewBudgetFieldText;
+    [SerializeField] private Text viewGrossFieldText;
+    [SerializeField] private Text viewLanguageFieldText;
+    [SerializeField] private Text viewCountryFieldText;
+    [SerializeField] private Text viewContentRatingFieldText;
+
     public GameObject ViewMovieDatabaseDialog {
         get => viewDialog;
     }
@@ -81,6 +90,34 @@ public class GUIController : MonoBehaviour {
     
     public Text ViewYearFieldText {
         get => viewYearFieldText;
+    }
+
+    public Text ViewColorFieldText {
+        get => viewColorFieldText;
+    }
+    
+    public Text ViewAspectRatioFieldText {
+        get => viewAspectRatioFieldText;
+    }
+    
+    public Text ViewBudgetFieldText {
+        get => viewBudgetFieldText;
+    }
+    
+    public Text ViewGrossFieldText {
+        get => viewGrossFieldText;
+    }
+    
+    public Text ViewLanguageFieldText {
+        get => viewLanguageFieldText;
+    }
+    
+    public Text ViewCountryFieldText {
+        get => viewCountryFieldText;
+    }
+    
+    public Text ViewContentRatingFieldText {
+        get => viewContentRatingFieldText;
     }
 
     #endregion
