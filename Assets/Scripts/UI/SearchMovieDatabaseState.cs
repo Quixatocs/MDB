@@ -16,7 +16,9 @@ public class SearchMovieDatabaseState : IGUIState {
     }
 
     private void OnSearchClicked() {
-        NextState = new ViewMovieDatabaseState();
+        //TODO: Find Correct Movie Data
+        MovieData movieDataToDisplay = null;
+        NextState = new ViewMovieDatabaseState(movieDataToDisplay);
         IsComplete = true;
     }
     
