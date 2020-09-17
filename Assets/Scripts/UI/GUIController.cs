@@ -28,6 +28,7 @@ public class GUIController : MonoBehaviour {
     [Header("Search Movie Database UI")]
     [SerializeField] private GameObject searchMovieDatabaseDialog;
     [SerializeField] private InputField searchMovieDatabaseInputField;
+    [SerializeField] private Button searchMovieDatabaseButton;
     
     public GameObject SearchMovieDatabaseDialog {
         get => searchMovieDatabaseDialog;
@@ -35,6 +36,10 @@ public class GUIController : MonoBehaviour {
     
     public InputField SearchMovieDatabaseInputField {
         get => searchMovieDatabaseInputField;
+    }
+    
+    public Button SearchMovieDatabaseButton {
+        get => searchMovieDatabaseButton;
     }
 
     #endregion
