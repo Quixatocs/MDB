@@ -6,7 +6,7 @@ public class ViewMovieDatabaseState : IGUIState {
         throw new System.NotImplementedException();
     }
 
-    public void OnExit() {
+    public void OnExit(GUIController guiController) {
         throw new System.NotImplementedException();
     }
 }

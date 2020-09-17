@@ -77,7 +77,14 @@ public class GUIController : MonoBehaviour {
     /// Sets the next state in the statemachine and calls OnEnter for that state
     /// </summary>
     private void SetState(IGUIState nextState) {
+        
+        // Exit previous state
+        if (currentState != null) {
+            currentState.OnExit(this);
+        }
+        
         currentState = nextState;
+        
         if (currentState != null) {
             currentState.OnEnter(this);
             
@@ -101,7 +108,7 @@ public class GUIController : MonoBehaviour {
             yield return new WaitForEndOfFrame();
             
             if (currentState == null) { 
-                // We are leaving the statemachine so no need to run the check
+                // We are leaving the statemachine so we can stop running the check
                 stateCompleteCheck = null;
                 yield break;
             }

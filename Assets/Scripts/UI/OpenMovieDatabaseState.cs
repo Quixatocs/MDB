@@ -7,8 +7,9 @@ public class OpenMovieDatabaseState : IGUIState {
         guiController.OpenMovieDatabaseButton.onClick.AddListener(OnOpenDatabaseClicked);
     }
 
-    public void OnExit() {
-        throw new System.NotImplementedException();
+    public void OnExit(GUIController guiController) {
+        guiController.OpenMovieDatabaseDialog.SetActive(false);
+        guiController.OpenMovieDatabaseButton.onClick.RemoveAllListeners();
     }
 
     private void OnOpenDatabaseClicked() {

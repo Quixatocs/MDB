@@ -19,5 +19,5 @@ public interface IGUIState
     /// <summary>
     /// Method to be called when exiting the state
     /// </summary>
-    void OnExit();
+    void OnExit(GUIController guiController);
 }
