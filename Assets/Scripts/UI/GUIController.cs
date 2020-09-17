@@ -1,10 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class GUIController : MonoBehaviour {
 
+    private static GUIController instance;
+    
     private Coroutine stateCompleteCheck;
     private IGUIState currentState;
+
+    private void Awake() {
+        // Singleton implementation
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+    }
 
     /// <summary>
     /// Sets the next state in the statemachine and calls OnEnter for that state
