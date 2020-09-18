@@ -1,5 +1,4 @@
-﻿
-/// <summary>
+﻿/// <summary>
 /// interface representing an individual GUIState that can exist in the GUIController state Machine 
 /// </summary>
 public interface IGUIState

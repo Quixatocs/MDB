@@ -6,7 +6,9 @@ using System.Linq;
 /// </summary>
 public static class DictionaryExtensions {
     
+    /// <summary>
     /// Will add the value to the dictionary, overriding it if it already exists.
+    /// </summary>
     public static void SetValue<TKey,TValue>(this Dictionary<TKey, TValue> dictionary, TKey key, TValue value) {
         if(dictionary.ContainsKey(key)) {
             dictionary[key] = value;
@@ -15,6 +17,9 @@ public static class DictionaryExtensions {
         }
     }
     
+    /// <summary>
+    /// Will return a list of values that partially match the entered search string
+    /// </summary>
     public static IEnumerable<T> PartialMatch<T>(this Dictionary<string, T> dictionary, string partialKey) {
         IEnumerable<string> matchingKeys = dictionary.Keys.Where(currentKey => currentKey.Contains(partialKey));
 

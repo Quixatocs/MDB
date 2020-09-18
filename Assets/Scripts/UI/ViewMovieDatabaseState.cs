@@ -19,7 +19,7 @@ public class ViewMovieDatabaseState : IGUIState {
 
         if (currentMovieData == null) return;
 
-        //Use this key with an API plan to return a poster image URL to load
+        //TODO: Use this key with an API plan to return a poster image URL to load
         string imdbTitleId = currentMovieData.ImdbUrl.Substring(26, 9);
         
         guiController.LoadRemoteImage("https://avatars0.githubusercontent.com/u/1129059");

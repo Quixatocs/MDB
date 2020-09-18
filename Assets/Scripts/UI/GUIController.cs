@@ -194,7 +194,7 @@ public class GUIController : MonoBehaviour {
     #region State Machine Methods
 
     /// <summary>
-    /// Sets the next state in the statemachine and calls OnEnter for that state
+    /// Sets the next state in the state machine and calls OnEnter for that state
     /// </summary>
     private void SetState(IGUIState nextState) {
         
@@ -228,7 +228,7 @@ public class GUIController : MonoBehaviour {
             yield return new WaitForEndOfFrame();
             
             if (currentState == null) { 
-                // We are leaving the statemachine so we can stop running the check
+                // We are leaving the state machine so we can stop running the check
                 stateCompleteCheck = null;
                 yield break;
             }
@@ -243,16 +243,24 @@ public class GUIController : MonoBehaviour {
 
     #region Remote Image Download Methods
 
-    public void LoadRemoteImage(string imageUrl) {
-        StartCoroutine(DownloadAndSetRemoteImage(imageUrl));
+    /// <summary>
+    /// Begins the coroutine to download the remote image
+    /// </summary>
+    public void LoadRemoteImage(string remoteImageUrl) {
+        StartCoroutine(DownloadAndSetRemoteImage(remoteImageUrl));
     }
-    private IEnumerator DownloadAndSetRemoteImage(string imageUrl) {
+    
+    /// <summary>
+    /// Downloads the remote image then manipulates UI components to show the image
+    /// and disable the loading image
+    /// </summary>
+    private IEnumerator DownloadAndSetRemoteImage(string remoteImageUrl) {
         viewLoadingImage.gameObject.SetActive(true);
         if (viewPosterImage == null) yield break;
         
         viewPosterImage.color = Color.clear;
         
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(imageUrl);
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(remoteImageUrl);
         yield return request.SendWebRequest();
         if (request.isNetworkError || request.isHttpError) {
             Debug.Log(request.error);

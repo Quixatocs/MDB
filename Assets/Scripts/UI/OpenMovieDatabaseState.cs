@@ -1,5 +1,4 @@
-﻿
-/// <summary>
+﻿/// <summary>
 /// Class representing the Open state of the Movie Database navigator
 /// This state would likely be used as the entry point to the Movie Database Navigator from
 /// an already running 3D game

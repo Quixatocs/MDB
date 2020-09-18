@@ -43,6 +43,6 @@ public static class MovieRuntimeData {
         return matchingTitles;
     }
     
-    //TODO: Other dictionaries for different searches
+    //TODO: Other dictionaries for different types of searches
     
 }

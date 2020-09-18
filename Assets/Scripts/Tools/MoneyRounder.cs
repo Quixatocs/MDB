@@ -5,6 +5,9 @@
 /// </summary>
 public static class MoneyRounder
 {
+    /// <summary>
+    /// Returns a human readable value for Thousands and Millions of Dollars
+    /// </summary>
     public static string GetMoneyRoundedToNearestPower(long unitValue) {
         if (unitValue >= 1000) {
             if (unitValue >= 1000000) {
