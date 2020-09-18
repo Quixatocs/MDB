@@ -1,9 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class to hold and control all GUI elements for the Movie Database navigator
+/// </summary>
 public class GUIController : MonoBehaviour {
 
     #region Singleton Instance

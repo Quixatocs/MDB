@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// Class to a dictionary of MovieData objects from the MovieDataCSV
+/// </summary>
 public static class MovieDataCSVTransformer {
     /// <summary>
     /// Splits the records from the raw movie data and separates by new lines and carriage returns

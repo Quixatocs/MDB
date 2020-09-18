@@ -1,13 +1,14 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Static Class holding the runtime data of the Movie Database which is loaded at app startup
+/// </summary>
 public static class MovieRuntimeData {
     
     private static Dictionary<string, MovieData> titleKeyedData = new Dictionary<string, MovieData>();
 
-    public static int NumTitleKeyedItems {
-        get { return titleKeyedData.Count; }
-    }
+    public static int NumTitleKeyedItems => titleKeyedData.Count;
 
     public static void ClearTitleKeyedData() {
         titleKeyedData.Clear();

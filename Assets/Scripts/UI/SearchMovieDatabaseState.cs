@@ -1,8 +1,9 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
+/// <summary>
+/// Class representing the Search state of the Movie Database navigator
+/// </summary>
 public class SearchMovieDatabaseState : IGUIState {
     
     public bool IsComplete { get; private set; }

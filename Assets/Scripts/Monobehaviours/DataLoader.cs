@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Class to load the data from the CSV at startup
+/// </summary>
 public class DataLoader : MonoBehaviour {
 
     [SerializeField] 
@@ -18,7 +21,6 @@ public class DataLoader : MonoBehaviour {
         }
         
         Debug.Log($"Number of Records Loaded: <{MovieRuntimeData.NumTitleKeyedItems}>");
-        
     }
 
 }

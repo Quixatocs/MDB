@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
+/// <summary>
+/// Class to contain extensions to the Dictionary class
+/// </summary>
 public static class DictionaryExtensions {
     
     /// Will add the value to the dictionary, overriding it if it already exists.

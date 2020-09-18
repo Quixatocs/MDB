@@ -1,9 +1,8 @@
-﻿
-using System.Collections;
-using UnityEngine;
-using UnityEngine.Networking;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
+/// <summary>
+/// Class representing the View state of the Movie Database navigator
+/// </summary>
 public class ViewMovieDatabaseState : IGUIState {
     public bool IsComplete { get; private set; }
     public IGUIState NextState { get; private set; }

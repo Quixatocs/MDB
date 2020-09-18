@@ -3,6 +3,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class to update Error UI while searching
+/// </summary>
 [RequireComponent(typeof(Text))]
 public class ErrorUIText : MonoBehaviour {
 

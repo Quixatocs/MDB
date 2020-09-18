@@ -1,4 +1,8 @@
-﻿public class MovieData {
+﻿
+/// <summary>
+/// Class to contain a representation of a Movie Item
+/// </summary>
+public class MovieData {
     // Title Data
     public string Title;
     public CreditData Director;
