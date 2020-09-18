@@ -72,6 +72,7 @@ public class GUIController : MonoBehaviour {
     [SerializeField] private GameObject viewDialog;
     [SerializeField] private Button viewBackButton;
     [SerializeField] private Image viewPosterImage;
+    [SerializeField] private Image viewLoadingImage;
     
     [SerializeField] private Text viewTitleFieldText;
     [SerializeField] private Text viewDirectorFieldText;
@@ -246,7 +247,10 @@ public class GUIController : MonoBehaviour {
         StartCoroutine(DownloadAndSetRemoteImage(imageUrl));
     }
     private IEnumerator DownloadAndSetRemoteImage(string imageUrl) {
+        viewLoadingImage.gameObject.SetActive(true);
         if (viewPosterImage == null) yield break;
+        
+        viewPosterImage.color = Color.clear;
         
         UnityWebRequest request = UnityWebRequestTexture.GetTexture(imageUrl);
         yield return request.SendWebRequest();
@@ -257,6 +261,8 @@ public class GUIController : MonoBehaviour {
             Texture2D downloadedTexture = ((DownloadHandlerTexture) request.downloadHandler).texture;
             if (downloadedTexture != null) {
                 viewPosterImage.sprite = Sprite.Create(downloadedTexture, new Rect(0.0f, 0.0f, downloadedTexture.width, downloadedTexture.height), Vector2.zero);
+                viewPosterImage.color = Color.white;
+                viewLoadingImage.gameObject.SetActive(false);
             }
         }
     } 
