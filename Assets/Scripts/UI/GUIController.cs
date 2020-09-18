@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class GUIController : MonoBehaviour {
@@ -68,6 +69,7 @@ public class GUIController : MonoBehaviour {
     [Header("View Movie Database UI")]
     [SerializeField] private GameObject viewDialog;
     [SerializeField] private Button viewBackButton;
+    [SerializeField] private Image viewPosterImage;
     
     [SerializeField] private Text viewTitleFieldText;
     [SerializeField] private Text viewDirectorFieldText;
@@ -88,6 +90,10 @@ public class GUIController : MonoBehaviour {
     
     public Button ViewMovieDatabaseBackButton {
         get => viewBackButton;
+    }
+    
+    public Image ViewPosterImage {
+        get => viewPosterImage;
     }
     
     public Text ViewTitleFieldText {
@@ -135,8 +141,6 @@ public class GUIController : MonoBehaviour {
     }
 
     #endregion
-
-    
 
     #region State Machine Fields
 
@@ -225,6 +229,29 @@ public class GUIController : MonoBehaviour {
             }
         }
     }
+
+    #endregion
+
+    #region Remote Image Download Methods
+
+    public void LoadRemoteImage(string imageUrl) {
+        StartCoroutine(DownloadAndSetRemoteImage(imageUrl));
+    }
+    private IEnumerator DownloadAndSetRemoteImage(string imageUrl) {
+        if (viewPosterImage == null) yield break;
+        
+        UnityWebRequest request = UnityWebRequestTexture.GetTexture(imageUrl);
+        yield return request.SendWebRequest();
+        if (request.isNetworkError || request.isHttpError) {
+            Debug.Log(request.error);
+        }
+        else {
+            Texture2D downloadedTexture = ((DownloadHandlerTexture) request.downloadHandler).texture;
+            if (downloadedTexture != null) {
+                viewPosterImage.sprite = Sprite.Create(downloadedTexture, new Rect(0.0f, 0.0f, downloadedTexture.width, downloadedTexture.height), Vector2.zero);
+            }
+        }
+    } 
 
     #endregion
 }

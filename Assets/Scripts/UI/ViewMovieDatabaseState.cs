@@ -1,9 +1,14 @@
 ﻿
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.UI;
+
 public class ViewMovieDatabaseState : IGUIState {
     public bool IsComplete { get; private set; }
     public IGUIState NextState { get; private set; }
 
-    private MovieData currentMovieData;
+    private readonly MovieData currentMovieData;
 
     public ViewMovieDatabaseState(MovieData dataToDisplay) {
         currentMovieData = dataToDisplay;
@@ -15,6 +20,8 @@ public class ViewMovieDatabaseState : IGUIState {
 
         if (currentMovieData == null) return;
 
+        guiController.LoadRemoteImage("https://avatars0.githubusercontent.com/u/1129059");
+        
         guiController.ViewTitleFieldText.text = currentMovieData.Title;
         guiController.ViewDirectorFieldText.text = currentMovieData.Director.Name;
         guiController.ViewDurationFieldText.text = $"{currentMovieData.Duration.ToString()} mins";
@@ -32,6 +39,7 @@ public class ViewMovieDatabaseState : IGUIState {
     public void OnExit(GUIController guiController) {
         guiController.ViewMovieDatabaseDialog.SetActive(false);
         guiController.ViewMovieDatabaseBackButton.onClick.RemoveAllListeners();
+        guiController.ViewPosterImage.sprite = null;
     }
     
     private void OnBackClicked() {

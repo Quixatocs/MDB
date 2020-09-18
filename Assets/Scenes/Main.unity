@@ -3978,6 +3978,7 @@ MonoBehaviour:
   searchMatchedTitlesHolder: {fileID: 402461916}
   viewDialog: {fileID: 1516760774}
   viewBackButton: {fileID: 1223809866}
+  viewPosterImage: {fileID: 521566943}
   viewTitleFieldText: {fileID: 2010373203}
   viewDirectorFieldText: {fileID: 2119490785}
   viewDurationFieldText: {fileID: 1912962656}
