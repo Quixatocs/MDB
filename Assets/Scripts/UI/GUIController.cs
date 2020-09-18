@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class GUIController : MonoBehaviour {
 
+    #region Singleton Instance
+
     private static GUIController instance;
+
+    #endregion
 
     #region Open Movie Database UI Elements
 
@@ -131,9 +135,32 @@ public class GUIController : MonoBehaviour {
     }
 
     #endregion
+
     
+
+    #region State Machine Fields
+
     private Coroutine stateCompleteCheck;
     private IGUIState currentState;
+
+    #endregion
+    
+    #region Events Fields
+
+    public delegate void OnUIDisplayableError(string errorMessage);
+    public static event OnUIDisplayableError onUIDisplayableError;
+
+    #endregion
+
+    #region Event Methods
+
+    public static void SendOnUIDisplayableError(string errorMessage) {
+        onUIDisplayableError?.Invoke(errorMessage);
+    }
+
+    #endregion
+
+    #region Monobehaviour Methods
 
     private void Awake() {
         // Singleton implementation
@@ -148,6 +175,10 @@ public class GUIController : MonoBehaviour {
     private void Start() {
         instance.SetState(new OpenMovieDatabaseState());
     }
+
+    #endregion
+
+    #region State Machine Methods
 
     /// <summary>
     /// Sets the next state in the statemachine and calls OnEnter for that state
@@ -194,4 +225,6 @@ public class GUIController : MonoBehaviour {
             }
         }
     }
+
+    #endregion
 }

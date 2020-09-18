@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SearchMovieDatabaseState : IGUIState {
+    
     public bool IsComplete { get; private set; }
     public IGUIState NextState { get; private set; }
 
@@ -11,6 +12,8 @@ public class SearchMovieDatabaseState : IGUIState {
 
     private GameObject searchButtonPrefab;
     private Transform searchButtonsHolder;
+
+    private const string NO_SEARCH_FIELD_ENTERED = "No Search Field Entered";
     
     private readonly List<GameObject> searchButtons = new List<GameObject>();
 
@@ -44,8 +47,19 @@ public class SearchMovieDatabaseState : IGUIState {
         currentSearchString = newSearchString;
     }
 
+    /// <summary>
+    /// Searches for any partial matches in the input field and displays them as title buttons
+    /// </summary>
     private void OnSearchClicked() {
 
+        if (string.IsNullOrEmpty(currentSearchString)) {
+
+            GUIController.SendOnUIDisplayableError(NO_SEARCH_FIELD_ENTERED);
+            // We don't want to run any of the matching (which could be costly)
+            // on an empty string so return here.
+            return;
+        }
+        
         HashSet<string> uniqueMovieTitles = MovieRuntimeData.GetUniqueMatchingTitles(currentSearchString);
 
         foreach (string title in uniqueMovieTitles) {
