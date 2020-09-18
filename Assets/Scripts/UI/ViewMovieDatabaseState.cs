@@ -34,16 +34,23 @@ public class ViewMovieDatabaseState : IGUIState {
         guiController.ViewLanguageFieldText.text = currentMovieData.Language;
         guiController.ViewCountryFieldText.text = currentMovieData.Country;
         guiController.ViewContentRatingFieldText.text = currentMovieData.ContentRating;
+        
+        guiController.ViewImdbPageButton.onClick.AddListener(() => OnImdbPageButtonClicked(currentMovieData.ImdbUrl));
     }
 
     public void OnExit(GUIController guiController) {
         guiController.ViewMovieDatabaseDialog.SetActive(false);
         guiController.ViewMovieDatabaseBackButton.onClick.RemoveAllListeners();
         guiController.ViewPosterImage.sprite = null;
+        guiController.ViewImdbPageButton.onClick.RemoveAllListeners();
     }
     
     private void OnBackClicked() {
         NextState = new SearchMovieDatabaseState();
         IsComplete = true;
+    }
+
+    private void OnImdbPageButtonClicked(string imdbPageUrl) {
+        Application.OpenURL(imdbPageUrl);
     }
 }

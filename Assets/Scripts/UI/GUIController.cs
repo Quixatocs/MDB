@@ -83,6 +83,8 @@ public class GUIController : MonoBehaviour {
     [SerializeField] private Text viewLanguageFieldText;
     [SerializeField] private Text viewCountryFieldText;
     [SerializeField] private Text viewContentRatingFieldText;
+    
+    [SerializeField] private Button viewImdbPageButton;
 
     public GameObject ViewMovieDatabaseDialog {
         get => viewDialog;
@@ -138,6 +140,10 @@ public class GUIController : MonoBehaviour {
     
     public Text ViewContentRatingFieldText {
         get => viewContentRatingFieldText;
+    }
+    
+    public Button ViewImdbPageButton {
+        get => viewImdbPageButton;
     }
 
     #endregion

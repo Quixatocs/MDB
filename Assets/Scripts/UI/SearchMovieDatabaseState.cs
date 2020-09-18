@@ -52,6 +52,12 @@ public class SearchMovieDatabaseState : IGUIState {
     /// </summary>
     private void OnSearchClicked() {
 
+        // Clear any old search
+        foreach (GameObject searchButton in searchButtons) {
+            GameObject.Destroy(searchButton);
+        }
+        searchButtons.Clear();
+        
         if (string.IsNullOrEmpty(currentSearchString)) {
 
             GUIController.SendOnUIDisplayableError(NO_SEARCH_FIELD_ENTERED);
